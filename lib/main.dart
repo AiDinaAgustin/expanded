@@ -1,47 +1,30 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(ListV());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key});
+class ListV extends StatelessWidget {
+  final List<Widget> w = [];
+
+  ListV() {
+    for (int i = 1; i <= 50; i++) {
+      w.add(ListTile(
+        leading: Icon(Icons.favorite, color: Colors.amber),
+        title: Text("List $i"),
+        subtitle: Text("Learning list view"),
+      ));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(title: const Text('Expanded Widget')),
-        body: Column(
-          children: [
-            Container(
-              color: Colors.blue,
-              height: 100,
-              width: 100,
-              child: Center(
-                child: Text('Java Programmer'),
-              ),
-            ),
-            Expanded(
-              child: Container(
-                color: Colors.red,
-                height: 100,
-                width: 100,
-                child: Center(
-                  child: Text('Phyton Programmer'),
-                ),
-              ),
-            ),
-            Container(
-              color: Colors.green,
-              height: 100,
-              width: 100,
-              child: Center(
-                child: Text('Flutter Programmer'),
-              ),
-            ),
-          ],
+        appBar: AppBar(title: Text("List View")),
+        body: ListView(
+          children: w,
         ),
       ),
     );
