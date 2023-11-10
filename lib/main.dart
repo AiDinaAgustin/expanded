@@ -8,10 +8,10 @@ class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
-  MyAppState createState() => MyAppState();
+  _MyAppState createState() => _MyAppState();
 }
 
-class MyAppState extends State<MyApp> {
+class _MyAppState extends State<MyApp> {
   final List<Map<String, dynamic>> fruits = [
     {'name': 'Apple', 'image': '', 'status': false},
     {'name': 'Anggur', 'image': '', 'status': false},
